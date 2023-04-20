@@ -1,0 +1,134 @@
+body {
+  margin: 0px;
+  font-family: "Roboto", Arial;
+}
+
+p {
+  margin: 0px;
+}
+
+button {
+  font-family: "Roboto", Arial;
+}
+
+.app__header {
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: lightcoral;
+}
+
+.header__title {
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.header__add-button {
+  padding: 4px 8px;
+  font-family: "Roboto";
+  font-size: 14px;
+}
+
+.app__books {
+  display: grid;
+  gap: 24px;
+  padding: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.books__book {
+  padding: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  gap: 12px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  border-radius: 12px;
+  -webkit-box-shadow: 2px 2px 6px rgb(151, 151, 151);
+          box-shadow: 2px 2px 6px rgb(151, 151, 151);
+}
+
+.book__title {
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.book__info {
+  font-style: italic;
+  font-size: 22px;
+}
+
+.book__haveRead-text {
+  font-size: 22px;
+  font-style: italic;
+}
+
+.form {
+  position: absolute;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 16px;
+  display: none;
+}
+
+.form__wrapper {
+  background-color: white;
+  padding: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: middle;
+      -ms-flex-pack: middle;
+          justify-content: middle;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 12px;
+  border-radius: 8px;
+  -webkit-box-shadow: 1px 1px 10px rgb(175, 175, 175);
+          box-shadow: 1px 1px 10px rgb(175, 175, 175);
+}
+.form__wrapper label {
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.form__input {
+  padding: 6px;
+  border-radius: 8px;
+  border: none;
+  -webkit-box-shadow: 1px 1px 10px rgb(163, 163, 163);
+          box-shadow: 1px 1px 10px rgb(163, 163, 163);
+}/*# sourceMappingURL=style.css.map */

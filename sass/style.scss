@@ -1,0 +1,100 @@
+body {
+  margin: 0px;
+  font-family: "Roboto", Arial;
+}
+
+p {
+  margin: 0px;
+}
+button {
+  font-family: "Roboto", Arial;
+}
+
+.app__header {
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: lightcoral;
+}
+
+.header__title {
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.header__add-button {
+  padding: 4px 8px;
+  font-family: "Roboto";
+  font-size: 14px;
+}
+
+.app__books {
+  display: grid;
+  gap: 24px;
+  padding: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.books__book {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 12px;
+  align-items: flex-start;
+  border-radius: 12px;
+  box-shadow: 2px 2px 6px rgb(151, 151, 151);
+}
+
+.book__title {
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.book__info {
+  font-style: italic;
+  font-size: 22px;
+}
+
+.book__haveRead-text {
+  font-size: 22px;
+  font-style: italic;
+}
+
+.form {
+  position: absolute;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  display: none;
+}
+
+.form__wrapper {
+  background-color: white;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: middle;
+  align-items: center;
+  gap: 12px;
+  border-radius: 8px;
+  box-shadow: 1px 1px 10px rgb(175, 175, 175);
+
+  label {
+    font-weight: 900;
+    font-size: 18px;
+  }
+}
+
+.form__input {
+  padding: 6px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 1px 1px 10px rgb(163, 163, 163);
+}

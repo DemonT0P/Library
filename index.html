@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./script/script.js" defer></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alkatra&family=Roboto:ital,wght@0,400;0,900;1,300&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Library</title>
+  </head>
+  <body>
+    <div class="form">
+      <form class="form__wrapper">
+        <label for="form__title">Book's Title</label>
+        <input
+          class="form__input"
+          type="text"
+          id="form__title"
+          placeholder="Book's Title"
+        />
+        <label for="form__author">Book's Author</label>
+        <input
+          class="form__input"
+          type="text"
+          id="form__author"
+          placeholder="Book's Author"
+        />
+        <label for="form__pages">Number of Pages</label>
+        <input
+          class="form__input"
+          type="number"
+          id="form__pages"
+          placeholder="Number of Pages"
+        />
+        <div>
+          <label for="form__haveRead">Finished ?</label>
+          <input type="checkbox" id="form__haveRead" />
+        </div>
+        <button class="form__submit-button" type="submit">Add book</button>
+      </form>
+      <button class="form__cancel-button">Cancel</button>
+    </div>
+    <div class="app">
+      <header class="app__header">
+        <section class="header__title">Library of our Own</section>
+        <button class="header__add-button">Add Book</button>
+      </header>
+      <main class="app__books"></main>
+    </div>
+  </body>
+</html>
