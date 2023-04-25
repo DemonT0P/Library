@@ -23,13 +23,16 @@
           class="form__input"
           type="text"
           id="form__title"
+          autocomplete="off"
           placeholder="Book's Title"
+          required
         />
         <label for="form__author">Book's Author</label>
         <input
           class="form__input"
           type="text"
           id="form__author"
+          autocomplete="off"
           placeholder="Book's Author"
         />
         <label for="form__pages">Number of Pages</label>
@@ -37,7 +40,10 @@
           class="form__input"
           type="number"
           id="form__pages"
+          autocomplete="off"
           placeholder="Number of Pages"
+          min="1"
+          required
         />
         <div>
           <label for="form__haveRead">Finished ?</label>

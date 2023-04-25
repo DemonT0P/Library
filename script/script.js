@@ -10,7 +10,12 @@ function Book(title, author, pages, haveRead) {
 document.querySelector(".form__wrapper").addEventListener("submit", (e) => {
   e.preventDefault();
   let title = document.querySelector("#form__title").value;
-  let author = document.querySelector("#form__author").value;
+  let author;
+  if (document.querySelector("#form__author").value == "") {
+    author = "Unknown";
+  } else {
+    author = document.querySelector("#form__author").value;
+  }
   let pages = document.querySelector("#form__pages").value;
   let haveRead = document.querySelector("#form__haveRead");
   let book = new Book(title, author, pages, haveRead);
@@ -33,7 +38,7 @@ document.querySelector(".form__cancel-button").addEventListener("click", () => {
   document.querySelector(".form").style.display = "none";
 });
 
-function addBooktoGrid(book) {
+function addBooktoGrid(book, index) {
   let divBook = document.createElement("div");
   divBook.innerHTML = `
     <p class="book__title">${book.title}</p>
@@ -50,12 +55,32 @@ function addBooktoGrid(book) {
     divBook.querySelector(".book__haveRead").checked = false;
   }
   divBook.className = "books__book";
+  divBook.dataset.index = index - 1;
   document.querySelector(".app__books").appendChild(divBook);
+
+  //Added a way to remove books
+
+  let counter = 0;
+  divBook
+    .querySelector(".book__remove-button")
+    .addEventListener("click", () => {
+      let index = divBook.dataset.index;
+      delete myLibrary[index];
+      divBook.remove();
+      myLibrary = myLibrary.filter((n) => n);
+
+      //Set a new index on element everytime it changes position
+
+      document.querySelectorAll(".books__book").forEach((book) => {
+        book.dataset.index = counter;
+        counter++;
+      });
+    });
 }
 
 function AddBook(book) {
   myLibrary.push(book);
-  addBooktoGrid(book);
+  addBooktoGrid(book, myLibrary.length);
 }
 
 const b1 = new Book("The Hobbit", "J.R.R. Tolkien", 295, false);
@@ -63,11 +88,3 @@ const b2 = new Book("Nineteen Eghty-Four", "George Orwell", 328, true);
 
 AddBook(b1);
 AddBook(b2);
-
-/*
-  document.querySelectorAll(".book__haveRead").forEach((check) => {
-    check.addEventListener("click", () => {
-      if(document.querySelector)
-    });
-  });
-*/
