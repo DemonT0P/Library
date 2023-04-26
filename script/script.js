@@ -17,7 +17,7 @@ document.querySelector(".form__wrapper").addEventListener("submit", (e) => {
     author = document.querySelector("#form__author").value;
   }
   let pages = document.querySelector("#form__pages").value;
-  let haveRead = document.querySelector("#form__haveRead");
+  let haveRead = document.querySelector("#form__haveRead").checked;
   let book = new Book(title, author, pages, haveRead);
   AddBook(book);
 
@@ -49,13 +49,17 @@ function addBooktoGrid(book, index) {
       <button class="book__remove-button">Remove</button>
     </div>
   `;
+
+  divBook.classList.add("books__book");
+  divBook.dataset.index = index - 1;
+
   if (book.haveRead) {
     divBook.querySelector(".book__haveRead").checked = true;
   } else {
     divBook.querySelector(".book__haveRead").checked = false;
+    divBook.classList.add("books__book--read");
   }
-  divBook.className = "books__book";
-  divBook.dataset.index = index - 1;
+
   document.querySelector(".app__books").appendChild(divBook);
 
   //Added a way to remove books
@@ -76,6 +80,17 @@ function addBooktoGrid(book, index) {
         counter++;
       });
     });
+
+  divBook.querySelector(".book__haveRead").addEventListener("click", (e) => {
+    let checkbox = e.target;
+    let book = checkbox.parentElement.parentElement;
+    book.classList.toggle("books__book--read");
+    if (checkbox.checked) {
+      myLibrary[book.dataset.index].haveRead = 1;
+    } else {
+      myLibrary[book.dataset.index].haveRead = 0;
+    }
+  });
 }
 
 function AddBook(book) {
