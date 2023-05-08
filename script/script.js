@@ -1,42 +1,50 @@
 let myLibrary = [];
 
-function Book(title, author, pages, haveRead) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.haveRead = haveRead;
+class Book {
+  constructor(title, author, pages, haveRead) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.haveRead = haveRead;
+  }
 }
 
-document.querySelector(".form__wrapper").addEventListener("submit", (e) => {
-  e.preventDefault();
-  let title = document.querySelector("#form__title").value;
-  let author;
-  if (document.querySelector("#form__author").value == "") {
-    author = "Unknown";
-  } else {
-    author = document.querySelector("#form__author").value;
-  }
-  let pages = document.querySelector("#form__pages").value;
-  let haveRead = document.querySelector("#form__haveRead").checked;
-  let book = new Book(title, author, pages, haveRead);
-  AddBook(book);
+(function () {
+  document.querySelector(".form__wrapper").addEventListener("submit", (e) => {
+    e.preventDefault();
+    let title = document.querySelector("#form__title").value;
+    let author;
+    if (document.querySelector("#form__author").value == "") {
+      author = "Unknown";
+    } else {
+      author = document.querySelector("#form__author").value;
+    }
+    let pages = document.querySelector("#form__pages").value;
+    let haveRead = document.querySelector("#form__haveRead").checked;
+    let book = new Book(title, author, pages, haveRead);
+    AddBook(book);
 
-  document.querySelector(".app").style.filter = "none";
-  document.querySelector(".app").style.pointerEvents = "auto";
-  document.querySelector(".form").style.display = "none";
-});
+    document.querySelector(".app").style.filter = "none";
+    document.querySelector(".app").style.pointerEvents = "auto";
+    document.querySelector(".form").style.display = "none";
+  });
 
-document.querySelector(".header__add-button").addEventListener("click", () => {
-  document.querySelector(".app").style.filter = "blur(10px)";
-  document.querySelector(".app").style.pointerEvents = "none";
-  document.querySelector(".form").style.display = "flex";
-});
+  document
+    .querySelector(".header__add-button")
+    .addEventListener("click", () => {
+      document.querySelector(".app").style.filter = "blur(10px)";
+      document.querySelector(".app").style.pointerEvents = "none";
+      document.querySelector(".form").style.display = "flex";
+    });
 
-document.querySelector(".form__cancel-button").addEventListener("click", () => {
-  document.querySelector(".app").style.filter = "none";
-  document.querySelector(".app").style.pointerEvents = "auto";
-  document.querySelector(".form").style.display = "none";
-});
+  document
+    .querySelector(".form__cancel-button")
+    .addEventListener("click", () => {
+      document.querySelector(".app").style.filter = "none";
+      document.querySelector(".app").style.pointerEvents = "auto";
+      document.querySelector(".form").style.display = "none";
+    });
+})();
 
 function addBooktoGrid(book, index) {
   let divBook = document.createElement("div");
